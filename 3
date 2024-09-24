@@ -1,0 +1,25 @@
+Write a Python function to find all pairs in a list that sum to a specific value.
+Input: [1, 2, 3, 4, 5], Sum=6
+
+
+Solution
+
+def find_pairs_with_sum(nums, target_sum):
+    pairs = []
+    seen = set()
+
+    for num in nums:
+        diff = target_sum - num
+        if diff in seen:
+            pairs.append((diff, num))
+        seen.add(num)
+
+    return pairs
+
+
+nums = [1, 2, 3, 4, 5]
+target_sum = 6
+result = find_pairs_with_sum(nums, target_sum)
+print(result)
+
+Output: [(1, 5), (2, 4)]
